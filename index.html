@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Begin Inspectlet JS Code -->
+<script type="text/javascript" id="inspectletjs">
+(function() {
+var insp_ab_loader = true; // set this boolean to false to disable the A/B testing loader
+window.__insp = window.__insp || [];
+__insp.push(['wid', 1590378645]);
+var ldinsp = function(){
+if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=1590378645&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x);if(typeof insp_ab_loader != "undefined" && insp_ab_loader){ var adlt = function(){ var e = document.getElementById('insp_abl'); if(e){ e.parentNode.removeChild(e); __insp.push(['ab_timeout']); }}; var adlc = "body{ visibility: hidden !important; }"; var adln = typeof insp_ab_loader_t != "undefined" ? insp_ab_loader_t : 1200; insp.onerror = adlt; var abti = setTimeout(adlt, adln); window.__insp_abt = abti; var abl = document.createElement('style'); abl.id = "insp_abl"; abl.type = "text/css"; if(abl.styleSheet) abl.styleSheet.cssText = adlc; else abl.appendChild(document.createTextNode(adlc)); document.head.appendChild(abl); } };
+setTimeout(ldinsp, 0);
+})();
+</script>
+<!-- End Inspectlet JS Code -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Elderfy</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+  <script>
+  $(document).ready(function(){
+    $('input').on('change', function () {
+    var v = $(this).val();
+    $('#survey-wrapper').css('font-size', v + 'px')
+
+});
+    });
+  </script>
+
+     <script>
+$(document).ready(function () {
+    // Check (onLoad) if the cookie is there and set the class if it is
+    if ($.cookie('highcontrast') == "yes") {
+        $("div").addClass("highcontrast");
+    }
+    // When the element is clicked
+    $("a.button-toggle-highcontrast").click(function () {
+        if ($.cookie('highcontrast') == "undefined" || $.cookie('highcontrast') == "no") {
+            $.cookie('highcontrast', 'yes', {
+                expires: 7,
+                path: '/'
+            });
+            $("div").addClass("highcontrast");
+        } else {
+            $.cookie('highcontrast', 'yes', {
+                expires: 7,
+                path: '/'
+            });
+            $("div").addClass("highcontrast");
+        }
+    });
+    $("a.button-toggle-remove").click(function () {
+        $('div').removeClass('highcontrast');
+        if ($.cookie('highcontrast') == "yes") {
+            $.cookie("highcontrast", null, {
+                path: '/'
+            });
+        }
+    });
+});
+</script>
+
+     <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #b1b1b1;
+}
+
+.highcontrast {
+  background-color: gray;
+  color: white;
+  a, a:visited { color: white;  }
+}
+
+
+/* Owl Styles */
+.owl-stage, .owl-stage-outer, .owl-item {
+  height: 100%;
+  width: 100%;
+}
+
+.owl-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+body, html, #survey-form {
+  height: 100%;
+  width: 100%;
+  display: block;
+  font-family: helvetica neue,helvetica,arial,sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+body {
+  position: relative;
+}
+
+#start-survey {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  position: absolute;
+  z-index: 2000;
+  left: 0;
+  text-align: center;
+  transition: .5s ease-in-out;
+  transform: translateX(0);
+}
+#start-survey.remove {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+#start-survey .start-survey-items h1 {
+  font-size: 200px;
+  margin: 0 0 20px 0;
+}
+#start-survey .start-survey-items p {
+  margin: 0 0 30px 0;
+
+}
+#start-survey .start-survey-items p strong {
+  font-weight: 900;
+}
+#start-survey .start-survey-items div {
+  display: inline-block;
+  padding: 40px;
+  border-radius: 5px;
+  background: #207bb4;
+  color: white;
+  box-shadow: inset 0 0 0 #08598c;
+  transition: .25s ease-in-out;
+  cursor: pointer;
+  font-size: 60px;
+}
+#start-survey .start-survey-items div:hover {
+  box-shadow: inset 200px 0 0 #08598c;
+}
+
+#previous-question {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  z-index: 2;
+  display: none;
+  width: 100%;
+  font-size: 14px;
+  line-height: 14px;
+  cursor: pointer;
+}
+#previous-question:hover {
+  color: #207bb4;
+}
+
+#survey-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: #F2F2F2;
+  transform: scale(0.6);
+  opacity: 0;
+  transition: .5s .25s ease-in-out;
+}
+#survey-wrapper.start {
+  transform: scale(1);
+  transform-origin: center center;
+  opacity: 1;
+}
+#survey-wrapper .survey-question, #survey-wrapper .survey-results {
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  text-align: center;
+}
+#survey-wrapper .survey-question h2, #survey-wrapper .survey-results h2 {
+  width: 100%;
+  padding: 20px;
+  font-size: 25px;
+  line-height: 20px;
+}
+#survey-wrapper .survey-question p, #survey-wrapper .survey-results p {
+  margin: 0 0 20px 0;
+}
+#survey-wrapper .survey-question p strong, #survey-wrapper .survey-results p strong {
+  font-weight: 900;
+}
+#survey-wrapper .survey-question label, #survey-wrapper .survey-results label {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 #207bb4;
+  transition: .25s ease-in-out;
+  cursor: pointer;
+}
+#survey-wrapper .survey-question label:hover, #survey-wrapper .survey-results label:hover {
+  box-shadow: inset 300px 0 0 #207bb4;
+  color: white;
+}
+#survey-wrapper .survey-question input[type="radio"], #survey-wrapper .survey-results input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+#survey-wrapper .survey-question input[type="radio"]:checked + label, #survey-wrapper .survey-results input[type="radio"]:checked + label {
+  background: #08598c;
+  color: white;
+}
+#survey-wrapper .survey-question button, #survey-wrapper .survey-results button {
+  padding: 20px;
+  margin: 20px 10px;
+  border-radius: 5px;
+  background: #207bb4;
+  color: white;
+  box-shadow: inset 0 0 0 #08598c;
+  transition: .25s ease-in-out;
+  cursor: pointer;
+  font-family: helvetica neue,helvetica,arial,sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 18px;
+  border: none;
+}
+#survey-wrapper .survey-question button:hover, #survey-wrapper .survey-results button:hover {
+  box-shadow: inset 200px 0 0 #08598c;
+}
+
+#progress-wrapper {
+  width: 960px;
+  height: 8px;
+  background: #f5f5f5;
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -480px;
+  border-radius: 3px;
+}
+#progress-wrapper:hover #progress-bar:after {
+  top: -38px;
+  opacity: 1;
+}
+@media all and (max-width: 1060px) {
+  #progress-wrapper {
+    left: 50px;
+    margin-left: 0px;
+    width: calc(100% - 100px);
+  }
+}
+#progress-wrapper #progress-bar {
+  background: #28a8f8;
+  height: 100%;
+  width: 0%;
+  transition: .5s ease-in-out;
+  border-radius: 3px;
+  position: relative;
+}
+#progress-wrapper #progress-bar:after {
+  content: attr(data-progress) "%";
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  line-height: 12px;
+  display: inline-block;
+  background: white;
+  padding: 10px;
+  width: 50px;
+  top: -28px;
+  right: -25px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: .25s ease-in-out;
+
+
+
+/* Add a black background color to the top navigation */
+
+}
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+ <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Elderfy
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Visual Aids</a>
+                </li>
+                <li>
+            <center>        <a href="#">Adjust Font Size</a> </center>
+  <center> <input type="range" min="10" max="40"> </center>
+                </li>
+                <li>
+                   <center> <a href="#">Contrast</a> </center>
+                </li>
+                <li>
+                  <center>  <a href="#!" class="button-toggle-highcontrast">Click to Make Dark</a>  </center>
+                </li>
+                <li>
+                  <center>  <a href="#!" class="button-toggle-remove">Click to Remove</a> </center>
+                </li>
+                <li>
+                    <a href="#">Hearing Aid</a>
+                </li>
+                <li>
+                  <center>  <a href="#">Highlight text</a>  </center>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                  <form id="survey-form" action="http://elderfy.com/boot/pg2.html">
+  <div id="start-survey">
+    <div class="start-survey-items">
+      <h1>Elderfy</h1>
+      
+      <div>Begin</div>
+
+    
+    </div>
+
+    
+    
+    
+  </div>
+   
+
+
+    
+  <div id="previous-question">Previous Question</div>
+  
+  <div id="survey-wrapper" class="owl-carousel">
+    <div class="survey-question">
+      <div class="question-items">
+        Do you prefer
+        <input type="radio" name="group1" id="group1-option1" value="Dogs"/>
+        <label for="group1-option1">Dogs</label>
+        or
+        <input type="radio" name="group1" id="group1-option2" value="Cats"/>
+        <label for="group1-option2">Cats</label>
+        ?
+
+      </div>
+    </div>
+    <div class="survey-question">
+      <div class="question-items">
+        Do you prefer
+        <input type="radio" name="group2" id="group2-option1" value="Breakfast"/>
+        <label for="group2-option1">Breakfast</label>,
+        <input type="radio" name="group2" id="group2-option2" value="Lunch"/>
+        <label for="group2-option2">Lunch</label>
+        or
+        <input type="radio" name="group2" id="group2-option3" value="Dinner"/>
+        <label for="group2-option3">Dinner</label>?
+      </div>
+    </div>
+    <div class="survey-question">
+      <div class="question-items">
+        Do you prefer
+        <input type="radio" name="group4" id="group4-option1" value="Chess"/>
+        <label for="group4-option1">Chess</label>,
+        <input type="radio" name="group4" id="group4-option2" value="Golf"/>
+        <label for="group4-option2">Golf</label> or
+        <input type="radio" name="group4" id="group4-option3" value="Snooker"/>
+        <label for="group4-option3">Snooker</label>?
+      </div>
+    </div>
+    <div class="survey-results">
+      <div class="results-items">
+        <h2></h2>
+        <p>
+          Your chosen choices: <span class="response-span" id="group4-response"></span> , <span class="response-span" id="group1-response"></span> , <span class="response-span" id="group2-response"></span>.
+        </p>
+        <button id="start-over" type="reset">Start Over</button>
+
+        <button id="submit" type="submit">Submit Results</button>
+        
+ 
+
+      </div>
+    </div>
+  </div>
+  <div id="progress-wrapper">
+    <div id="progress-bar" data-progress="0"></div>
+ 
+
+    <div id="slider-range-max">
+       
+    </div>
+
+
+  </div>
+
+</form>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Click for assists</a>
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+
+    </script>
+
+
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+   <script src="http://elderfy.com/boot/cook/jquery.cookie.js"></script>
+
+</body>
+<script src='//vws.responsivevoice.com/v/e?key=uRXehxFa'></script>
+
+</html>
